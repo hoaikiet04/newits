@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TNGo-main</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- thư viện anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="./index.html">
+          <img
+            src="./assets/images/TN-GO.png"
+            alt="TNGo Logo"
+            height="40"
+            class="me-2"
+          />
+        </a>
+
+        <!-- Toggler Button for Mobile (responsive cho mobile) -->
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#features">
+                <i class="fas fa-book-open me-1"></i>Hướng dẫn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bike-pricing">
+                <i class="fas fa-tags me-1"></i>Bảng giá
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">
+                <i class="fas fa-concierge-bell me-1"></i>Dịch vụ
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#stations">
+                <i class="fas fa-map-marker-alt me-1"></i>Trạm
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#news-grid">
+                <i class="fas fa-newspaper me-1"></i>Tin tức
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">
+                <i class="fas fa-envelope me-1"></i>Liên hệ
+              </a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a
+                class="nav-link btn btn-outline-info px-4 rounded-pill"
+                href="#login"
+              >
+                <i class="fas fa-sign-in-alt me-1"></i>Đăng nhập
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section (banner) -->
+    <section id="hero" class="hero-section">
+      <div class="hero-slider">
+        <div class="hero-slide active" data-slide="0">
+          <img
+            src="./assets/images/bike-1.jpg"
+            alt="Bike 1"
+            class="hero-image"
+          />
+        </div>
+        <div class="hero-slide" data-slide="1">
+          <img
+            src="./assets/images/bike-2.jpg"
+            alt="Bike 2"
+            class="hero-image"
+          />
+        </div>
+        <div class="hero-slide" data-slide="2">
+          <img
+            src="./assets/images/bike-3.jpeg"
+            alt="Bike 3"
+            class="hero-image"
+          />
+        </div>
+        <div class="hero-slide" data-slide="3">
+          <img
+            src="./assets/images/bike-4.png"
+            alt="Bike 4"
+            class="hero-image"
+          />
+        </div>
+        <div class="hero-slide" data-slide="4">
+          <img
+            src="./assets/images/bike-5.jpeg"
+            alt="Bike 5"
+            class="hero-image"
+          />
+        </div>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-lg-8 mx-auto text-center hero-content">
+            <h1 class="hero-title">Giải pháp giao thông xanh cho thành phố</h1>
+            <p class="hero-subtitle">Di chuyển thông minh, bảo vệ môi trường</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slider-controls">
+        <div class="slider-dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+          <span class="dot" data-slide="3"></span>
+          <span class="dot" data-slide="4"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About TNGo Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <!-- Description Column -->
+          <div class="col-md-6">
+            <div class="p-4">
+              <h2 class="display-5 fw-bold mb-4">
+                TNGo - Giải pháp xe đạp thông minh
+              </h2>
+              <p class="lead mb-4">
+                TNGo là dịch vụ chia sẻ xe đạp thông minh hàng đầu tại Việt Nam,
+                mang đến giải pháp di chuyển xanh, tiện lợi và thân thiện với
+                môi trường. Với mạng lưới trạm xe đạp rộng khắp các thành phố
+                lớn, TNGo giúp người dùng dễ dàng di chuyển trong phạm vi đô thị
+                mà không cần sở hữu phương tiện riêng.
+              </p>
+              <p class="mb-4">
+                Ứng dụng TNGo tích hợp công nghệ tiên tiến, cho phép người dùng
+                tìm kiếm, đặt xe và thanh toán một cách nhanh chóng. Mỗi chuyến
+                đi với TNGo góp phần giảm thiểu khí thải, giảm ùn tắc giao thông
+                và xây dựng một môi trường sống xanh hơn cho cộng đồng. Dịch vụ
+                xe đạp công cộng TNGo hiện đã có mặt tại 06 Tỉnh, Thành phố:
+                <b>
+                  TP. Hà Nội, Hải Phòng, Đà Nẵng, Quy Nhơn, Vũng Tàu, Hồ Chí
+                  Minh
+                </b>
+              </p>
+              <div class="d-flex gap-3">
+                <a href="#features" class="btn btn-primary btn-lg"
+                  >Tìm hiểu thêm</a
+                >
+                <a href="#pricing" class="btn btn-outline-primary btn-lg"
+                  >Đăng ký ngay</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Column -->
+          <div class="col-md-6">
+            <div class="p-4">
+              <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
+                <iframe
+                  src="https://www.facebook.com/v15.0/plugins/video.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df10bad814f5d25bb6%26domain%3Dtngo.vn%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Ftngo.vn%252Ffb70d220f974bf14d%26relation%3Dparent.parent&amp;container_width=746&amp;href=https%3A%2F%2Fwww.facebook.com%2Ftngo.vn%2Fvideos%2F826310328960933%2F&amp;lazy=true&amp;locale=vi_VN&amp;sdk=joey&amp;show_text=false"
+                  title="TNGo - Smart Bike Sharing Service"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  class="border-0"
+                ></iframe>
+              </div>
+              <div class="mt-3 text-center">
+                <p class="text-muted">Xem video giới thiệu về dịch vụ TNGo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5 bg-light features-section">
+      <div class="container" id="features">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Cách sử dụng TNGo</h2>
+          <p class="lead text-muted">
+            Chỉ với 3 bước đơn giản, bạn có thể bắt đầu hành trình xanh
+          </p>
+        </div>
+
+        <div class="row align-items-center">
+          <!-- Image Column -->
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="process-image-container position-relative">
+              <div class="process-image active" data-step="1">
+                <img
+                  src="./assets/images/use-1.png"
+                  alt="Mở khóa xe đạp"
+                  class="img-fluid rounded shadow"
+                />
+              </div>
+              <div class="process-image" data-step="2">
+                <img
+                  src="./assets/images/use-2.png"
+                  alt="Đạp xe"
+                  class="img-fluid rounded shadow"
+                />
+              </div>
+              <div class="process-image" data-step="3">
+                <img
+                  src="./assets/images/use-3.png"
+                  alt="Trả xe"
+                  class="img-fluid rounded shadow"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Column -->
+          <div class="col-lg-6">
+            <div class="process-timeline">
+              <!-- Step 1 -->
+              <div class="process-step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h3 class="step-title">Mở khóa</h3>
+                  <p class="step-description">
+                    Quét mã QR trên xe đạp bằng ứng dụng TNGo để mở khóa và bắt
+                    đầu hành trình của bạn.
+                  </p>
+                </div>
+                <div class="step-line"></div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="process-step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h3 class="step-title">Đạp xe</h3>
+                  <p class="step-description">
+                    Tận hưởng chuyến đi thú vị và thân thiện với môi trường trên
+                    chiếc xe đạp chất lượng cao.
+                  </p>
+                </div>
+                <div class="step-line"></div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="process-step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h3 class="step-title">Trả xe</h3>
+                  <p class="step-description">
+                    Đặt xe vào bất kỳ trạm TNGo nào gần nhất và khóa xe để hoàn
+                    tất chuyến đi.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bike Pricing Section -->
+    <section id="bike-pricing" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Bảng giá dịch vụ</h2>
+          <p class="lead text-muted">
+            Lựa chọn loại xe và gói dịch vụ phù hợp với bạn
+          </p>
+        </div>
+
+        <!-- Bike Type Toggle -->
+        <div class="d-flex justify-content-center mb-5">
+          <div class="btn-group" role="group" aria-label="Bike type toggle">
+            <input
+              type="radio"
+              class="btn-check bike-type-toggle"
+              name="bikeType"
+              id="standardBike"
+              value="standard"
+              checked
+            />
+            <label class="btn btn-outline-primary px-4 py-2" for="standardBike">
+              <i class="fas fa-bicycle me-2"></i>Xe đạp thường
+            </label>
+
+            <input
+              type="radio"
+              class="btn-check bike-type-toggle"
+              name="bikeType"
+              id="electricBike"
+              value="electric"
+            />
+            <label class="btn btn-outline-primary px-4 py-2" for="electricBike">
+              <i class="fas fa-bolt me-2"></i>Xe đạp điện
+            </label>
+          </div>
+        </div>
+
+        <!-- Standard Bike Pricing Cards -->
+        <div id="standardBikePricing" class="bike-pricing-container active">
+          <div class="row g-4">
+            <!-- Basic Plan -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-header bg-white text-center py-4">
+                  <h3 class="card-title mb-0">Gói cơ bản</h3>
+                  <div class="price mt-3">
+                    <span class="currency">₫</span>50.000
+                    <span class="period">/tháng</span>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled">
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>30 phút miễn
+                      phí mỗi lần
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Không giới
+                      hạn số lần thuê
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Hỗ trợ 24/7
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Bảo hiểm cơ
+                      bản
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer bg-white text-center py-3">
+                  <a href="#" class="btn btn-outline-primary w-100"
+                    >Đăng ký ngay</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow border-primary">
+                <div class="card-header bg-primary text-white text-center py-4">
+                  <h3 class="card-title mb-0">Gói tiêu chuẩn</h3>
+                  <div class="price mt-3">
+                    <span class="currency">₫</span>100.000
+                    <span class="period">/tháng</span>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled">
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>60 phút miễn
+                      phí mỗi lần
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Không giới
+                      hạn số lần thuê
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Hỗ trợ 24/7
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Bảo hiểm
+                      nâng cao
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Ưu đãi đặc
+                      biệt
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer bg-white text-center py-3">
+                  <a href="#" class="btn btn-primary w-100">Đăng ký ngay</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-header bg-white text-center py-4">
+                  <h3 class="card-title mb-0">Gói cao cấp</h3>
+                  <div class="price mt-3">
+                    <span class="currency">₫</span>200.000
+                    <span class="period">/tháng</span>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled">
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>120 phút
+                      miễn phí mỗi lần
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Không giới
+                      hạn số lần thuê
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Hỗ trợ 24/7
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Bảo hiểm
+                      toàn diện
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Ưu đãi đặc
+                      biệt
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Ưu tiên đặt
+                      xe
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer bg-white text-center py-3">
+                  <a href="#" class="btn btn-outline-primary w-100"
+                    >Đăng ký ngay</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Electric Bike Pricing Cards -->
+        <div id="electricBikePricing" class="bike-pricing-container">
+          <div class="row g-4">
+            <!-- Basic Plan -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-header bg-white text-center py-4">
+                  <h3 class="card-title mb-0">Gói cơ bản</h3>
+                  <div class="price mt-3">
+                    <span class="currency">₫</span>100.000
+                    <span class="period">/tháng</span>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled">
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>20 phút miễn
+                      phí mỗi lần
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Không giới
+                      hạn số lần thuê
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Hỗ trợ 24/7
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Bảo hiểm cơ
+                      bản
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer bg-white text-center py-3">
+                  <a href="#" class="btn btn-outline-primary w-100"
+                    >Đăng ký ngay</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow border-primary">
+                <div class="card-header bg-primary text-white text-center py-4">
+                  <h3 class="card-title mb-0">Gói tiêu chuẩn</h3>
+                  <div class="price mt-3">
+                    <span class="currency">₫</span>200.000
+                    <span class="period">/tháng</span>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled">
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>40 phút miễn
+                      phí mỗi lần
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Không giới
+                      hạn số lần thuê
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Hỗ trợ 24/7
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Bảo hiểm
+                      nâng cao
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Ưu đãi đặc
+                      biệt
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer bg-white text-center py-3">
+                  <a href="#" class="btn btn-primary w-100">Đăng ký ngay</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-header bg-white text-center py-4">
+                  <h3 class="card-title mb-0">Gói cao cấp</h3>
+                  <div class="price mt-3">
+                    <span class="currency">₫</span>400.000
+                    <span class="period">/tháng</span>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="list-unstyled">
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>60 phút miễn
+                      phí mỗi lần
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Không giới
+                      hạn số lần thuê
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Hỗ trợ 24/7
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Bảo hiểm
+                      toàn diện
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Ưu đãi đặc
+                      biệt
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-check text-success me-2"></i>Ưu tiên đặt
+                      xe
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer bg-white text-center py-3">
+                  <a href="#" class="btn btn-outline-primary w-100"
+                    >Đăng ký ngay</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Grid Section -->
+    <section id="news-grid" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Tin tức mới nhất</h2>
+          <p class="lead text-muted">
+            Cập nhật những thông tin mới nhất về TNGo
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- News Item 1 -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="./assets/images/image-1.jpg"
+                class="card-img-top"
+                alt="News 1"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Tiêu đề tin tức 1</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 2 -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="./assets/images/image-2.jpg"
+                class="card-img-top"
+                alt="News 2"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Tiêu đề tin tức 2</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 3 -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="./assets/images/image-3.jpg"
+                class="card-img-top"
+                alt="News 3"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Tiêu đề tin tức 3</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 4 -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="./assets/images/image-4.jpg"
+                class="card-img-top"
+                alt="News 4"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Tiêu đề tin tức 4</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 5 -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="./assets/images/image-5.jpg"
+                class="card-img-top"
+                alt="News 5"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Tiêu đề tin tức 5</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 6 -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="./assets/images/image-6.jpg"
+                class="card-img-top"
+                alt="News 6"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Tiêu đề tin tức 6</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 7 -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="./assets/images/image-7.jpg"
+                class="card-img-top"
+                alt="News 7"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Tiêu đề tin tức 7</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- News Item 8 -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="./assets/images/image-8.jpg"
+                class="card-img-top"
+                alt="News 8"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Tiêu đề tin tức 8</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <!-- Logo -->
+            <a
+              class="navbar-brand d-flex align-items-center"
+              href="./index.html"
+            >
+              <img
+                src="./assets/images/TN-GO.png"
+                alt="TNGo Logo"
+                height="40"
+                class="me-2"
+              />
+            </a>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Giới thiệu</a></li>
+              <li><a href="#" class="text-white">Tuyển dụng</a></li>
+              <li><a href="#" class="text-white">Tin tức</a></li>
+              <li><a href="#" class="text-white">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Hỗ trợ</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Hướng dẫn sử dụng</a></li>
+              <li><a href="#" class="text-white">Câu hỏi thường gặp</a></li>
+              <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
+              <li><a href="#" class="text-white">Điều khoản sử dụng</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Kết nối với chúng tôi</h5>
+            <div class="social-icons">
+              <a href="#" class="text-white"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+            <div class="mt-3">
+              <p class="text-white mb-1">Email: support@tngo.vn</p>
+              <p class="text-white mb-1">Hotline: 1900 1234</p>
+              <p class="text-white">Địa chỉ: 123 Đường ABC, Quận XYZ, TP.HCM</p>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-light" />
+        <div class="text-center text-white">
+          <p class="mb-0">&copy; 2024 TNGo. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
