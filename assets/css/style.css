@@ -28,6 +28,12 @@ body {
   margin-bottom: 2rem;
 }
 
+.logo {
+  width: 55px;
+  height: auto;
+  object-fit: cover;
+}
+
 /* Navbar Styles */
 .navbar {
   background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
@@ -123,6 +129,15 @@ body {
   }
 }
 
+/* form login */
+
+.modal-backdrop {
+  z-index: 5 !important;
+}
+
+.modal {
+  z-index: 5 !important;
+}
 /* Hero Section */
 .hero-section {
   position: relative;

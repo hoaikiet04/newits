@@ -193,4 +193,33 @@ $(document).ready(function () {
       $("#electricBikePricing").addClass("active");
     }
   });
+
+  $("#login").click(function () {
+    const username = $("#username").val().trim();
+    const password = $("#password").val().trim();
+
+    if (username === "" || password === "") {
+      alert("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.");
+      return;
+    }
+
+    // Xử lý đăng nhập ở đây, ví dụ gọi AJAX...
+    console.log("Tên đăng nhập:", username);
+    console.log("Mật khẩu:", password);
+
+    // Đóng modal nếu thành công (tạm thời)
+    $("#loginModal").modal("hide");
+  });
+
+  $("#switchToRegister").click(function (e) {
+    e.preventDefault();
+    $("#loginModal").modal("hide");
+    $("#registerModal").modal("show");
+  });
+  // chuyển đổi giữa đăng ký và đăng nhập
+  $("#switchToLogin").click(function (e) {
+    e.preventDefault();
+    $("#registerModal").modal("hide");
+    $("#loginModal").modal("show");
+  });
 });
