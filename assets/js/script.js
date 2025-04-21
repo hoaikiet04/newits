@@ -222,4 +222,91 @@ $(document).ready(function () {
     $("#registerModal").modal("hide");
     $("#loginModal").modal("show");
   });
+
+  // USER PAGE
+  // Handle form submission
+  $("#ticketForm").on("submit", function (e) {
+    e.preventDefault();
+
+    // Lấy dữ liệu form
+    const project = $("#projectSelect").val();
+    const dailyTicket = $("#dailyTicket").is(":checked");
+    const monthlyTicket = $("#monthlyTicket").is(":checked");
+    const usePoints = $("#usePoints").is(":checked");
+
+    // Ghi log kiểm tra
+    console.log("Form submitted:", {
+      project,
+      dailyTicket,
+      monthlyTicket,
+      usePoints,
+    });
+
+    // Tính giá vé
+    const ticketPrice = dailyTicket ? 50000 : monthlyTicket ? 150000 : 0;
+
+    if (ticketPrice === 0) {
+      alert("Vui lòng chọn loại vé.");
+      return;
+    }
+
+    // Lấy số dư tài khoản
+    const accountText = $(".account-balance")
+      .first()
+      .find("span")
+      .text()
+      .replace("đ", "")
+      .replace(/\./g, "");
+    const accountBalance = parseInt(accountText || 0);
+
+    // Kiểm tra số dư
+    if (accountBalance >= ticketPrice) {
+      const successModal = new bootstrap.Modal(
+        document.getElementById("successModal")
+      );
+      successModal.show();
+    } else {
+      const insufficientModal = new bootstrap.Modal(
+        document.getElementById("insufficientModal")
+      );
+      insufficientModal.show();
+    }
+  });
+
+  // Handle quick amount buttons
+  $(".quick-amount-btn").on("click", function () {
+    // Remove active class from all buttons
+    $(".quick-amount-btn").removeClass("active");
+
+    // Add active class to clicked button
+    $(this).addClass("active");
+
+    // Set the amount in the input field
+    const amount = $(this).data("amount");
+    $("#amountInput").val(amount);
+  });
+
+  // Handle form submission
+  $("#topUpForm").on("submit", function (e) {
+    e.preventDefault();
+
+    // Get form values
+    const amount = $("#amountInput").val();
+    const paymentMethod = $('input[name="paymentMethod"]:checked').attr("id");
+
+    // Validate amount
+    if (!amount || amount < 10000) {
+      alert("Vui lòng nhập số tiền tối thiểu 10.000đ");
+      return;
+    }
+
+    // Log form data (for demo purposes)
+    console.log("Form submitted:", {
+      amount,
+      paymentMethod,
+    });
+
+    // Here you would typically send this data to your server
+    alert("Đang chuyển hướng đến cổng thanh toán...");
+  });
 });

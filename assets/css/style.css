@@ -132,7 +132,7 @@ body {
 /* form login */
 
 .modal-backdrop {
-  z-index: 5 !important;
+  z-index: 1 !important;
 }
 
 .modal {
@@ -752,5 +752,394 @@ footer a:hover {
   }
   .section-subtitle {
     font-size: 1rem;
+  }
+}
+
+/* =========================== USER PAGE =========================== */
+.ma-section {
+  padding: 7rem 0;
+}
+.pricing-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-title {
+  color: #0066cc;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.pricing-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 1rem;
+}
+
+.pricing-features {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.pricing-features li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.pricing-features li:before {
+  content: "•";
+  color: #0066cc;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.pricing-note {
+  font-style: italic;
+  color: #6c757d;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.form-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.form-title {
+  color: #0066cc;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+}
+
+.form-check {
+  margin-bottom: 1rem;
+}
+
+.form-check-input:checked {
+  background-color: #0066cc;
+  border-color: #0066cc;
+}
+
+.account-balance {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #0066cc;
+  border-color: #0066cc;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .pricing-card {
+    margin-bottom: 1rem;
+  }
+
+  .pricing-price {
+    font-size: 1.25rem;
+  }
+
+  .pricing-features li {
+    font-size: 0.95rem;
+  }
+
+  .form-card {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    padding: 1rem 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .pricing-title {
+    font-size: 1.25rem;
+  }
+
+  .pricing-price {
+    font-size: 1.1rem;
+  }
+
+  .pricing-features li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-title {
+    font-size: 1.25rem;
+  }
+
+  .form-control,
+  .form-select {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .btn-primary {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* ================ PAYMENT PAGE =============== */
+.wallet-card {
+  background-color: #0066cc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.wallet-title {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.wallet-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wallet-item:last-child {
+  border-bottom: none;
+}
+
+.wallet-label {
+  font-weight: 500;
+}
+
+.wallet-value {
+  font-weight: 700;
+}
+
+.transaction-history {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.transaction-title {
+  color: #0066cc;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.transaction-empty {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+.form-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.form-title {
+  color: #0066cc;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.form-control {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+}
+
+.quick-amount-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.quick-amount-btn:hover,
+.quick-amount-btn.active {
+  background-color: #0066cc;
+  color: white;
+  border-color: #0066cc;
+}
+
+.warning-message {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  color: #856404;
+}
+
+.payment-method {
+  margin-bottom: 1rem;
+}
+
+.payment-method .form-check {
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.payment-method .form-check:hover {
+  background-color: #f8f9fa;
+}
+
+.payment-method .form-check-input:checked {
+  background-color: #0066cc;
+  border-color: #0066cc;
+}
+
+.payment-method .form-check-input:checked + .form-check-label {
+  font-weight: 600;
+}
+
+.payment-method .coming-soon {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background-color: #0066cc;
+  border-color: #0066cc;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .wallet-card,
+  .transaction-history,
+  .form-card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    padding: 1rem 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .wallet-title,
+  .form-title,
+  .transaction-title {
+    font-size: 1.25rem;
+  }
+
+  .wallet-item {
+    font-size: 0.95rem;
+  }
+
+  .form-control {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .quick-amount-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    padding: 0.5rem 1rem;
   }
 }

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TNGo-main</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- thư viện anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="./index.html">
+          <img
+            src="./assets/images/TN-GO.png"
+            alt="TNGo Logo"
+            class="me-2 logo"
+          />
+        </a>
+
+        <!-- Toggler Button for Mobile (responsive cho mobile) -->
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#features">
+                <i class="fas fa-book-open me-1"></i>Hướng dẫn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#bike-pricing">
+                <i class="fas fa-tags me-1"></i>Bảng giá
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#stations">
+                <i class="fas fa-map-marker-alt me-1"></i>Trạm
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#news-grid">
+                <i class="fas fa-newspaper me-1"></i>Tin tức
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">
+                <i class="fas fa-concierge-bell me-1"></i>Chính sách
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">
+                <i class="fas fa-envelope me-1"></i>Liên hệ
+              </a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <button
+                type="button"
+                class="nav-link btn btn-outline-info px-4 rounded-pill"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                <i class="fas fa-sign-in-alt me-1"></i>Đăng nhập
+              </button>
+            </li>
+
+            <!-- Modal đăng nhập -->
+            <li class="nav-item ms-lg-3">
+              <!-- Modal Đăng nhập -->
+              <div
+                class="modal fade"
+                id="loginModal"
+                tabindex="-1"
+                aria-labelledby="loginModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content shadow">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="loginModalLabel">
+                        Đăng nhập tài khoản
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Đóng"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="loginForm">
+                        <div class="mb-3">
+                          <label for="username" class="form-label"
+                            >Tên đăng nhập</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            placeholder="Nhập tên đăng nhập"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="password" class="form-label"
+                            >Mật khẩu</label
+                          >
+                          <input
+                            type="password"
+                            class="form-control"
+                            id="password"
+                            placeholder="Nhập mật khẩu"
+                            required
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-primary w-100"
+                          id="login"
+                        >
+                          Đăng nhập
+                        </button>
+                      </form>
+
+                      <!-- Link chuyển sang modal đăng ký -->
+                      <p class="mt-3 text-center">
+                        Chưa có tài khoản?
+                        <a href="#" id="switchToRegister">Đăng ký</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal Đăng ký -->
+              <div
+                class="modal fade"
+                id="registerModal"
+                tabindex="-1"
+                aria-labelledby="registerModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content shadow">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="registerModalLabel">
+                        Đăng ký tài khoản
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Đóng"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="registerForm">
+                        <div class="mb-3">
+                          <label for="newUsername" class="form-label"
+                            >Tên đăng nhập</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="newUsername"
+                            placeholder="Nhập tên đăng nhập"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="newEmail" class="form-label">Email</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="newEmail"
+                            placeholder="Nhập email"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="newPassword" class="form-label"
+                            >Mật khẩu</label
+                          >
+                          <input
+                            type="password"
+                            class="form-control"
+                            id="newPassword"
+                            placeholder="Nhập mật khẩu"
+                            required
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-success w-100"
+                          id="register"
+                        >
+                          Đăng ký
+                        </button>
+                      </form>
+
+                      <!-- Link chuyển ngược về modal đăng nhập -->
+                      <p class="mt-3 text-center">
+                        Đã có tài khoản?
+                        <a href="#" id="switchToLogin">Đăng nhập</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="container ma-section">
+      <div class="row g-4">
+        <!-- Left Section: Pricing Details -->
+        <div class="col-lg-7">
+          <h2 class="mb-4">Thông tin vé</h2>
+
+          <!-- Daily Ticket -->
+          <div class="pricing-card">
+            <h3 class="pricing-title">Vé ngày</h3>
+            <div class="pricing-price">50.000đ / ngày</div>
+            <ul class="pricing-features">
+              <li>450 phút (7.5 giờ) sử dụng mỗi ngày</li>
+              <li>Sử dụng thêm tính phí theo lượt</li>
+              <li>Không giới hạn số lần thuê trong ngày</li>
+              <li>
+                Áp dụng nhóm: một tài khoản có thể thuê nhiều xe nếu mua đủ vé
+                ngày
+              </li>
+            </ul>
+          </div>
+
+          <!-- Monthly Ticket -->
+          <div class="pricing-card">
+            <h3 class="pricing-title">Vé tháng</h3>
+            <div class="pricing-price">150.000đ / tháng</div>
+            <ul class="pricing-features">
+              <li>60 giờ sử dụng trong tháng</li>
+              <li>Tối đa 4 lượt mỗi ngày, giới hạn 120 phút/ngày</li>
+              <li>Không áp dụng sử dụng nhóm</li>
+            </ul>
+          </div>
+
+          <!-- Prepaid Ticket -->
+          <div class="pricing-card">
+            <h3 class="pricing-title">Vé trả trước</h3>
+            <div class="pricing-price">5.000đ / giờ</div>
+            <ul class="pricing-features">
+              <li>Lựa chọn từ 120/180/240 giờ trong 30 ngày</li>
+              <li>Không giới hạn số lần thuê trong ngày</li>
+              <li>Áp dụng sử dụng nhóm với ít nhất 2 xe mỗi tài khoản</li>
+            </ul>
+            <div class="pricing-note">
+              <p class="mb-0">
+                Lưu ý: Thời gian sử dụng sẽ bắt đầu tính từ ngày kích hoạt vé.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Section: Purchase Form -->
+        <div class="col-lg-5">
+          <div class="form-card">
+            <h3 class="form-title">Mua vé</h3>
+            <form id="ticketForm">
+              <!-- Project Selection -->
+              <div class="mb-4">
+                <label for="projectSelect" class="form-label"
+                  >Chọn dự án TNGO</label
+                >
+                <select class="form-select" id="projectSelect">
+                  <option selected value="TNGO_TP Hồ Chí Minh">
+                    TNGO_TP Hồ Chí Minh
+                  </option>
+                  <option value="TNGO_TP Hà Nội">TNGO_TP Hà Nội</option>
+                  <option value="TNGO_TP Đà Nẵng">TNGO_TP Đà Nẵng</option>
+                  <option value="TNGO_TP Vũng Tàu">TNGO_TP Vũng Tàu</option>
+                  <option value="TNGO_TP Quy Nhơn">TNGO_TP Quy Nhơn</option>
+                  <option value="TNGO_TP Hải Phòng">TNGO_TP Hải Phòng</option>
+                </select>
+              </div>
+
+              <!-- Ticket Type Selection -->
+              <div class="mb-4">
+                <label class="form-label">Loại vé</label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="dailyTicket"
+                  />
+                  <label class="form-check-label" for="dailyTicket">
+                    Vé ngày/Xe đạp
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="monthlyTicket"
+                  />
+                  <label class="form-check-label" for="monthlyTicket">
+                    Vé tháng/Xe đạp
+                  </label>
+                </div>
+              </div>
+
+              <!-- TNGO Points -->
+              <div class="mb-4">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="usePoints"
+                  />
+                  <label class="form-check-label" for="usePoints">
+                    Dùng điểm TNGO
+                  </label>
+                </div>
+              </div>
+
+              <!-- Account Balance -->
+              <div class="mb-4">
+                <div class="account-balance">
+                  <p class="mb-1">
+                    Tài khoản chính: <span class="fw-bold">0đ</span>
+                  </p>
+                </div>
+                <div class="account-balance">
+                  <p class="mb-1">
+                    Tài khoản khuyến mại: <span class="fw-bold">0đ</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Mua vé
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- modal khi nhấn vào không đủ số dư -->
+          <!-- Modal: Thanh toán thành công -->
+        </div>
+        <div
+          class="modal fade"
+          id="successModal"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+              <h5 class="modal-title text-success mb-3">
+                ✅ Thanh toán thành công!
+              </h5>
+              <p>Bạn đã mua vé thành công.</p>
+              <button
+                type="button"
+                class="btn btn-success mt-2"
+                data-bs-dismiss="modal"
+              >
+                Đóng
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- modal 2 -->
+        <!-- Modal: Số dư không đủ -->
+        <div
+          class="modal modal-backdrop fade"
+          id="insufficientModal"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+              <h5 class="modal-title text-danger mb-3">⚠️ Số dư không đủ</h5>
+              <p>Vui lòng nạp thêm tiền để tiếp tục mua vé.</p>
+              <a href="./pay.html" class="btn btn-primary mt-2">Nạp tiền</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <!-- Logo -->
+            <a
+              class="navbar-brand d-flex align-items-center"
+              href="./index.html"
+            >
+              <img
+                src="./assets/images/TN-GO.png"
+                alt="TNGo Logo"
+                class="me-2 logo"
+              />
+            </a>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Giới thiệu</a></li>
+              <li><a href="#" class="text-white">Tin tức</a></li>
+              <li><a href="#" class="text-white">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Hỗ trợ</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Hướng dẫn sử dụng</a></li>
+              <li><a href="#" class="text-white">Câu hỏi thường gặp</a></li>
+              <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
+              <li><a href="#" class="text-white">Điều khoản sử dụng</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Kết nối với chúng tôi</h5>
+            <div class="social-icons">
+              <a href="#" class="text-white"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+            <div class="mt-3">
+              <p class="text-white mb-1">Email: support@tngo.vn</p>
+              <p class="text-white mb-1">Hotline: 1900 1234</p>
+              <p class="text-white">Địa chỉ: 123 Đường ABC, Quận XYZ, TP.HCM</p>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-light" />
+        <div class="text-center text-white">
+          <p class="mb-0">GVHD: VŨ ĐÌNH LONG</p>
+          <p class="mb-0">Nhóm hoaikiet</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
