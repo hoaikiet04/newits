@@ -130,14 +130,14 @@ body {
 }
 
 /* form login */
+.modal {
+  z-index: 1024 !important;
+}
 
 .modal-backdrop {
-  z-index: 1 !important;
-}
-
-.modal {
   z-index: 5 !important;
 }
+
 /* Hero Section */
 .hero-section {
   position: relative;
