@@ -224,54 +224,6 @@ $(document).ready(function () {
   });
 
   // USER PAGE
-  // Handle form submission
-  // $("#ticketForm").on("submit", function (e) {
-  //   e.preventDefault();
-
-  //   // Lấy dữ liệu form
-  //   const project = $("#projectSelect").val();
-  //   const dailyTicket = $("#dailyTicket").is(":checked");
-  //   const monthlyTicket = $("#monthlyTicket").is(":checked");
-  //   const usePoints = $("#usePoints").is(":checked");
-
-  //   // Ghi log kiểm tra
-  //   console.log("Form submitted:", {
-  //     project,
-  //     dailyTicket,
-  //     monthlyTicket,
-  //     usePoints,
-  //   });
-
-  //   // Tính giá vé
-  //   const ticketPrice = dailyTicket ? 50000 : monthlyTicket ? 150000 : 0;
-
-  //   if (ticketPrice === 0) {
-  //     alert("Vui lòng chọn loại vé.");
-  //     return;
-  //   }
-
-  //   // Lấy số dư tài khoản
-  //   const accountText = $(".account-balance")
-  //     .first()
-  //     .find("span")
-  //     .text()
-  //     .replace("đ", "")
-  //     .replace(/\./g, "");
-  //   const accountBalance = parseInt(accountText || 0);
-
-  //   // Kiểm tra số dư
-  //   if (accountBalance >= ticketPrice) {
-  //     const successModal = new bootstrap.Modal(
-  //       document.getElementById("successModal")
-  //     );
-  //     successModal.show();
-  //   } else {
-  //     const insufficientModal = new bootstrap.Modal(
-  //       document.getElementById("insufficientModal")
-  //     );
-  //     insufficientModal.show();
-  //   }
-  // });
 
   $("#ticketForm").submit(function (e) {
     e.preventDefault(); // chặn form submit mặc định
