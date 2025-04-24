@@ -225,51 +225,72 @@ $(document).ready(function () {
 
   // USER PAGE
   // Handle form submission
-  $("#ticketForm").on("submit", function (e) {
-    e.preventDefault();
+  // $("#ticketForm").on("submit", function (e) {
+  //   e.preventDefault();
 
-    // Lấy dữ liệu form
-    const project = $("#projectSelect").val();
-    const dailyTicket = $("#dailyTicket").is(":checked");
-    const monthlyTicket = $("#monthlyTicket").is(":checked");
-    const usePoints = $("#usePoints").is(":checked");
+  //   // Lấy dữ liệu form
+  //   const project = $("#projectSelect").val();
+  //   const dailyTicket = $("#dailyTicket").is(":checked");
+  //   const monthlyTicket = $("#monthlyTicket").is(":checked");
+  //   const usePoints = $("#usePoints").is(":checked");
 
-    // Ghi log kiểm tra
-    console.log("Form submitted:", {
-      project,
-      dailyTicket,
-      monthlyTicket,
-      usePoints,
-    });
+  //   // Ghi log kiểm tra
+  //   console.log("Form submitted:", {
+  //     project,
+  //     dailyTicket,
+  //     monthlyTicket,
+  //     usePoints,
+  //   });
 
-    // Tính giá vé
-    const ticketPrice = dailyTicket ? 50000 : monthlyTicket ? 150000 : 0;
+  //   // Tính giá vé
+  //   const ticketPrice = dailyTicket ? 50000 : monthlyTicket ? 150000 : 0;
 
-    if (ticketPrice === 0) {
-      alert("Vui lòng chọn loại vé.");
-      return;
-    }
+  //   if (ticketPrice === 0) {
+  //     alert("Vui lòng chọn loại vé.");
+  //     return;
+  //   }
 
-    // Lấy số dư tài khoản
-    const accountText = $(".account-balance")
-      .first()
-      .find("span")
-      .text()
-      .replace("đ", "")
-      .replace(/\./g, "");
-    const accountBalance = parseInt(accountText || 0);
+  //   // Lấy số dư tài khoản
+  //   const accountText = $(".account-balance")
+  //     .first()
+  //     .find("span")
+  //     .text()
+  //     .replace("đ", "")
+  //     .replace(/\./g, "");
+  //   const accountBalance = parseInt(accountText || 0);
 
-    // Kiểm tra số dư
-    if (accountBalance >= ticketPrice) {
-      const successModal = new bootstrap.Modal(
-        document.getElementById("successModal")
-      );
-      successModal.show();
+  //   // Kiểm tra số dư
+  //   if (accountBalance >= ticketPrice) {
+  //     const successModal = new bootstrap.Modal(
+  //       document.getElementById("successModal")
+  //     );
+  //     successModal.show();
+  //   } else {
+  //     const insufficientModal = new bootstrap.Modal(
+  //       document.getElementById("insufficientModal")
+  //     );
+  //     insufficientModal.show();
+  //   }
+  // });
+
+  $("#ticketForm").submit(function (e) {
+    e.preventDefault(); // chặn form submit mặc định
+
+    // Giả sử giá vé là 10000đ
+    const ticketPrice = 10000;
+
+    // Lấy số dư tài khoản chính
+    let mainBalance = $("#mainBalance").text().replace(/[^\d]/g, "");
+    mainBalance = parseInt(mainBalance);
+
+    if (mainBalance >= ticketPrice) {
+      alert("Thanh toán thành công!");
+      // ở đây bạn có thể gửi dữ liệu đến server bằng AJAX nếu cần
     } else {
-      const insufficientModal = new bootstrap.Modal(
-        document.getElementById("insufficientModal")
-      );
-      insufficientModal.show();
+      // Nếu không đủ tiền, hiện thông báo với lựa chọn chuyển đến trang nạp tiền
+      if (confirm("Thanh toán không thành công. Bạn có muốn nạp tiền?")) {
+        window.location.href = "pay.html";
+      }
     }
   });
 

@@ -322,12 +322,14 @@
               <div class="mb-4">
                 <div class="account-balance">
                   <p class="mb-1">
-                    Tài khoản chính: <span class="fw-bold">0đ</span>
+                    Tài khoản chính:
+                    <span id="mainBalance" class="fw-bold">0đ</span>
                   </p>
                 </div>
                 <div class="account-balance">
                   <p class="mb-1">
-                    Tài khoản khuyến mại: <span class="fw-bold">0đ</span>
+                    Tài khoản khuyến mại:
+                    <span id="promoBalance" class="fw-bold">0đ</span>
                   </p>
                 </div>
               </div>
@@ -339,48 +341,6 @@
                 </button>
               </div>
             </form>
-          </div>
-
-          <!-- modal khi nhấn vào không đủ số dư -->
-          <!-- Modal: Thanh toán thành công -->
-        </div>
-        <div
-          class="modal fade"
-          id="successModal"
-          tabindex="-1"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center p-4">
-              <h5 class="modal-title text-success mb-3">
-                ✅ Thanh toán thành công!
-              </h5>
-              <p>Bạn đã mua vé thành công.</p>
-              <button
-                type="button"
-                class="btn btn-success mt-2"
-                data-bs-dismiss="modal"
-              >
-                Đóng
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- modal 2 -->
-        <!-- Modal: Số dư không đủ -->
-        <div
-          class="modal modal-backdrop fade"
-          id="insufficientModal"
-          tabindex="-1"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center p-4">
-              <h5 class="modal-title text-danger mb-3">⚠️ Số dư không đủ</h5>
-              <p>Vui lòng nạp thêm tiền để tiếp tục mua vé.</p>
-              <a href="./pay.html" class="btn btn-primary mt-2">Nạp tiền</a>
-            </div>
           </div>
         </div>
       </div>
