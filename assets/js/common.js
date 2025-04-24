@@ -1,4 +1,4 @@
-const API_URL = "https://localhost:7025/";
+const API_URL = "https://localhost:7035/";
 
 const configAPI = {
   method: "get",

@@ -194,21 +194,80 @@ $(document).ready(function () {
     }
   });
 
-  $("#login").click(function () {
-    const username = $("#username").val().trim();
+  //--------------------------------------ĐĂNG NHẬP ---------------------------------
+  $("#login").click(async function () {
+    const email = $("#username").val().trim();
     const password = $("#password").val().trim();
 
-    if (username === "" || password === "") {
+    if (email === "" || password === "") {
       alert("Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.");
       return;
     }
 
     // Xử lý đăng nhập ở đây, ví dụ gọi AJAX...
-    console.log("Tên đăng nhập:", username);
-    console.log("Mật khẩu:", password);
+    const [error, response] = await newITExecAPI({
+      method: "POST",
+      url: "api/auth/login",
+      data: {
+        email,
+        password,
+      },
+    });
 
-    // Đóng modal nếu thành công (tạm thời)
+    if (error) {
+      alert(
+        error?.responseJSON?.message ||
+          "Đã xảy ra ngoại lệ vui lòng thử lại sau."
+      );
+      return;
+    }
+
+    setCookie("token", response?.data?.token, 7);
     $("#loginModal").modal("hide");
+    alert("Đăng nhập thành công.");
+  });
+
+  //--------------------------------------ĐĂNG KÝ ---------------------------------
+  $("#register").on("click", async function () {
+    const data = {
+      fullName: $("#fullName").val().trim(),
+      email: $("#newEmail").val().trim(),
+      phoneNumber: $("#phoneNumber").val().trim(),
+      password: $("#newPassword").val(),
+    };
+
+    if (
+      !data?.email ||
+      !data?.fullName ||
+      !data?.phoneNumber ||
+      !data?.password
+    ) {
+      alert("Vui lòng nhập đầy đủ các trường đánh dấu sao (*).");
+      return;
+    }
+
+    if (data?.password?.length < 6) {
+      alert("Mật khẩu phải từ 6 ký tự trở lên.");
+      return;
+    }
+
+    // Xử lý đăng nhập ở đây, ví dụ gọi AJAX...
+    const [error, response] = await newITExecAPI({
+      method: "POST",
+      url: "api/auth/register",
+      data,
+    });
+
+    if (error) {
+      alert(
+        error?.responseJSON?.message ||
+          "Đã xảy ra ngoại lệ vui lòng thử lại sau."
+      );
+      return;
+    }
+
+    alert("Đăng ký tài khoản thành công.");
+    $("#switchToLogin").click();
   });
 
   $("#switchToRegister").click(function (e) {
