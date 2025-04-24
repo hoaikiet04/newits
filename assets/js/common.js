@@ -18,6 +18,16 @@ function setCookie(name, value, exdays) {
   document.cookie = `${name}=${value};${expires};path=/`;
 }
 
+function removeCookie(name) {
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+}
+
+function formatMoneyVn(number){
+  if(!number) return 0;
+  
+  return number.toLocaleString('vi-VN');
+}
+
 async function newITExecAPI(configs = configAPI) {
   if (!configs || !configs.url) {
     throw new Error('Missing "configs" or "configs.url"!');
