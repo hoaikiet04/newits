@@ -239,7 +239,7 @@
             <h3 class="wallet-title">Ví của tôi</h3>
             <div class="wallet-item">
               <span class="wallet-label">Tài khoản chính:</span>
-              <span class="wallet-value">0đ</span>
+              <span id="main-account" class="wallet-value">0đ</span>
             </div>
             <div class="wallet-item">
               <span class="wallet-label">Nợ cước:</span>
@@ -257,9 +257,21 @@
 
           <!-- Transaction History -->
           <div class="transaction-history">
-            <h3 class="transaction-title">Lịch sử giao dịch</h3>
-            <div class="transaction-empty">
-              Hiện chưa có giao dịch nào được thực hiện !
+            <h3 class="transaction-title">Lịch sử nạp tiền</h3>
+            <div id="history">
+              <div class="transaction-empty">
+                Hiện chưa có giao dịch nào được thực hiện !
+              </div>
+            </div>
+          </div>
+
+          <!-- Transaction History -->
+          <div class="transaction-history">
+            <h3 class="transaction-title">Lịch sử thuê xe</h3>
+            <div id="history-bike">
+              <div class="transaction-empty">
+                Hiện chưa có giao dịch nào được thực hiện !
+              </div>
             </div>
           </div>
         </div>
@@ -429,5 +441,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="./assets/js/common.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/pay.js"></script>
   </body>
 </html>

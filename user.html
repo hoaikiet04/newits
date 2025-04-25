@@ -269,16 +269,7 @@
                 <label for="projectSelect" class="form-label"
                   >Chọn dự án TNGO</label
                 >
-                <select class="form-select" id="projectSelect">
-                  <option selected value="TNGO_TP Hồ Chí Minh">
-                    TNGO_TP Hồ Chí Minh
-                  </option>
-                  <option value="TNGO_TP Hà Nội">TNGO_TP Hà Nội</option>
-                  <option value="TNGO_TP Đà Nẵng">TNGO_TP Đà Nẵng</option>
-                  <option value="TNGO_TP Vũng Tàu">TNGO_TP Vũng Tàu</option>
-                  <option value="TNGO_TP Quy Nhơn">TNGO_TP Quy Nhơn</option>
-                  <option value="TNGO_TP Hải Phòng">TNGO_TP Hải Phòng</option>
-                </select>
+                <select class="form-select" id="projectSelect"></select>
               </div>
 
               <!-- Ticket Type Selection -->
@@ -287,8 +278,10 @@
                 <div class="form-check">
                   <input
                     class="form-check-input"
-                    type="checkbox"
+                    name="tick"
+                    type="radio"
                     id="dailyTicket"
+                    value="true"
                   />
                   <label class="form-check-label" for="dailyTicket">
                     Vé ngày/Xe đạp
@@ -296,9 +289,11 @@
                 </div>
                 <div class="form-check">
                   <input
+                    name="tick"
                     class="form-check-input"
-                    type="checkbox"
+                    type="radio"
                     id="monthlyTicket"
+                    value="false"
                   />
                   <label class="form-check-label" for="monthlyTicket">
                     Vé tháng/Xe đạp
@@ -337,7 +332,7 @@
 
               <!-- Submit Button -->
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">
+                <button id="btn-pay-ticket" class="btn btn-primary btn-lg">
                   Mua vé
                 </button>
               </div>
@@ -408,5 +403,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="./assets/js/common.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/user.js"></script>
   </body>
 </html>
