@@ -22,10 +22,40 @@ function removeCookie(name) {
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 }
 
-function formatMoneyVn(number){
-  if(!number) return 0;
-  
-  return number.toLocaleString('vi-VN');
+function formatMoneyVn(number) {
+  if (!number) return 0;
+
+  return number.toLocaleString("vi-VN");
+}
+
+async function getUserInfor() {
+  const [error, response] = await newITExecAPI({
+    url: "api/auth/profile",
+  });
+
+  if (error) {
+    const { status } = error;
+
+    if (status === 403) {
+      alert("Bạn không có quyền thực hiện chức năng này.");
+      removeCookie("token");
+      window.location = "/index.html";
+      return;
+    }
+
+    if (status === 401) {
+      alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.");
+      window.location = "/index.html";
+      return;
+    }
+
+    alert(
+      error?.responseJSON?.message || "Đã xảy ra ngoại lệ vui lòng thử lại sau."
+    );
+    return;
+  }
+
+  return response?.data;
 }
 
 async function newITExecAPI(configs = configAPI) {

@@ -1,4 +1,17 @@
 $(document).ready(function () {
+  // Click đăng ký
+  $(".register-now").click(function (e) {
+    e.preventDefault();
+
+    const user = getUserInfor();
+
+    if (!user) {
+      $("#loginModal").modal("show");
+    } else {
+      window.location = "/user.html";
+    }
+  });
+
   // Hero Slider functionality
   const heroSlider = {
     currentSlide: 0,
@@ -223,7 +236,15 @@ $(document).ready(function () {
     }
 
     setCookie("token", response?.data?.token, 7);
+    window.localStorage.setItem("user", JSON.stringify(response?.data));
     $("#loginModal").modal("hide");
+
+    if (response?.data?.role === 0) {
+      window.location = "/user.html";
+    } else {
+      window.location = "/admin.html";
+    }
+
     alert("Đăng nhập thành công.");
   });
 
@@ -318,27 +339,4 @@ $(document).ready(function () {
     $("#amountInput").val(amount);
   });
 
-  // Handle form submission
-  $("#topUpForm").on("submit", function (e) {
-    e.preventDefault();
-
-    // Get form values
-    const amount = $("#amountInput").val();
-    const paymentMethod = $('input[name="paymentMethod"]:checked').attr("id");
-
-    // Validate amount
-    if (!amount || amount < 10000) {
-      alert("Vui lòng nhập số tiền tối thiểu 10.000đ");
-      return;
-    }
-
-    // Log form data (for demo purposes)
-    console.log("Form submitted:", {
-      amount,
-      paymentMethod,
-    });
-
-    // Here you would typically send this data to your server
-    alert("Đang chuyển hướng đến cổng thanh toán...");
-  });
 });
