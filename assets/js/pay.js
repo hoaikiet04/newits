@@ -12,11 +12,9 @@ $(document).ready(async function () {
   $("#topUpForm").on("submit", async function (e) {
     e.preventDefault();
 
-    // Get form values
     const amount = $("#amountInput").val();
     const paymentMethod = $('input[name="paymentMethod"]:checked').attr("id");
 
-    // Validate amount
     if (!amount || amount < 10000) {
       alert("Vui lòng nhập số tiền tối thiểu 10.000đ");
       return;
@@ -55,7 +53,20 @@ $(document).ready(async function () {
 
     loadBalanceUser(response?.data?.newBalance);
     await loadHistoryPay();
-    alert("Nạp tiền thành công.");
+
+    // 👉 Thay alert cũ bằng Swal.fire
+    Swal.fire({
+      title: "Nạp tiền thành công!",
+      text: "Bạn có muốn tiếp tục thuê xe không?",
+      icon: "success",
+      showCancelButton: true,
+      confirmButtonText: "Tiếp tục thuê",
+      cancelButtonText: "Ở lại trang nạp tiền",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "user.html";
+      }
+    });
   });
 });
 
@@ -101,7 +112,7 @@ async function loadHistoryPay() {
             </div>
             <div style="width: 33.33%;">
                 <span style="color: #333; font-weight: 600;">Đã nạp ${formatMoneyVn(
-                item?.amount
+                  item?.amount
                 )} đ</span>
             </div>
             <div style="width: 33.33%;">

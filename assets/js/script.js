@@ -338,5 +338,4 @@ $(document).ready(function () {
     const amount = $(this).data("amount");
     $("#amountInput").val(amount);
   });
-
 });
