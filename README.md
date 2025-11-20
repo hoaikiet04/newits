@@ -40,7 +40,7 @@ Trong dự án này, vai trò **Team Lead** tập trung vào:
 
   * **Backend (.NET 8 Web API)**
   * **Frontend (HTML/CSS/JS, Bootstrap)**
-  * **Database (MySQL/MariaDB)**
+  * **Database (MySQL)**
 * Theo dõi tiến độ, đảm bảo mọi người nắm rõ scope của mình.
 * Kết nối các phần: API ↔ DB ↔ giao diện, giảm xung đột khi tích hợp.
 
