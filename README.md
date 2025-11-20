@@ -66,8 +66,6 @@ Trong dự án này, vai trò **Team Lead** tập trung vào:
 * Nhận diện rủi ro: trễ tiến độ, lỗi tích hợp backend–frontend, sai sót nghiệp vụ.
 * Điều chỉnh thứ tự ưu tiên, tập trung hoàn thành core features trước.
 
-> README này có thể dùng làm **portfolio** thể hiện kỹ năng Project Coordinator / Team Lead trong dự án thực tế.
-
 ---
 
 ## 🏗️ Kiến trúc hệ thống
@@ -84,7 +82,6 @@ Trong dự án này, vai trò **Team Lead** tập trung vào:
   * `AutoMapper.Extensions.Microsoft.DependencyInjection` – mapping DTO
   * `BCrypt.Net-Next` – mã hoá mật khẩu
 
-> Thư mục backend (ví dụ): `NetItBe/`
 
 ### 🎨 Frontend
 
@@ -133,24 +130,34 @@ Quan hệ khoá ngoại được định nghĩa để đảm bảo toàn vẹn d
 
 ---
 
-## 📸 Demo giao diện
+## 📸 Demo giao diện (ảnh thực tế từ dự án)
 
-> ✍️ **Chỗ chèn ảnh demo** – bạn chỉ cần thay đường dẫn ảnh tương ứng (ví dụ lưu trong `docs/demo/` hoặc `screenshots/`).
+### 1. Trang chủ
+![Trang chủ](assets/images/homepage.jpg)
+> Giao diện chính với tông màu hiện đại, giới thiệu dịch vụ thuê xe đạp đa trạm.
+> 
+![Danh sách trạm & thuê xe](assets/images/homepage_1.png)
+> Người dùng chọn trạm → xem xe khả dụng → quét QR hoặc nhập mã để thuê.
 
-```md
-## 📸 Demo giao diện
+### 2. Màn hình nạp tiền ví & mua vé
+![Nạp tiền ví](assets/images/user.png)
+![Mua vé/gói](assets/images/pay.png)
+> Hỗ trợ nạp tiền và mua vé theo lượt hoặc theo thời hạn (ngày/tuần/tháng).
+> Hiển thị chi tiết các chuyến đi, thời gian, trạm đi/đến, phí phát sinh.
 
-### Trang chủ
-![Trang chủ](docs/demo/home.png)
+### 3. Trang thanh toán thành công
+![Thanh toán khi trả xe](assets/images/booking_sucsees.png)
+![Nạp tiền thành công](assets/images/pay_sucesss.png)
 
-### Màn hình người dùng thuê xe
-![Thuê xe](docs/demo/rent-bike.png)
+### 4. Đăng nhập, đăng ký
+![Đăng nhập](assets/images/login.jpg)
 
-### Màn hình thanh toán / nạp tiền
-![Thanh toán](docs/demo/payment.png)
+### 5. Admin Dashboard
+![Admin Dashboard](assets/images/admin.png)
+> Tổng quan hệ thống: số người dùng, doanh thu,…
+![Thêm gói thuê mới](assets/images/admin2.png)
 
-### Dashboard quản trị
-![Admin Dashboard](docs/demo/admin-dashboard.png)
+
 ```
 
 ---
