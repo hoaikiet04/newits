@@ -221,7 +221,3 @@ Quan hệ khoá ngoại được định nghĩa để đảm bảo toàn vẹn d
   * Tổng hợp tài liệu, chuẩn bị demo & thuyết trình
 
 * **Lê Minh Ty – Backend Developer/Database**
-
----
-
-Nếu bạn muốn, mình có thể **viết thêm phiên bản README tiếng Anh** hoặc tách riêng một mục “Skills demonstrated as Project Coordinator” để bạn dùng trực tiếp trong CV/LinkedIn.
