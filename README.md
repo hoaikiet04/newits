@@ -213,7 +213,7 @@ Quan hệ khoá ngoại được định nghĩa để đảm bảo toàn vẹn d
 
 > Cập nhật lại theo đúng nhóm của bạn.
 
-* **[Tên bạn] – Team Lead/Frontend Developer**
+* **Phạm Hoài Kiệt – Team Lead/Frontend Developer**
 
   * Quản lý yêu cầu & backlog
   * Thiết kế tổng thể (kiến trúc, DB, luồng nghiệp vụ)
